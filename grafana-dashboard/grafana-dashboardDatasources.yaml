@@ -21,7 +21,16 @@ stringData:
                 "type": "prometheus",
                 "url": "http://prometheus-k8s.monitoring.svc:9090",
                 "version": 1
-            }
+            }, 
+            {
+                "access": "proxy",
+                "editable": false,
+                "name": "loki",
+                "orgId": 1,
+                "type": "loki",
+                "url": "http://loki-stack.loki:3100",
+                "version": 1
+              }
         ]
     }
 type: Opaque
