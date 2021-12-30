@@ -31,20 +31,21 @@ This will display your Kubernetes cluster for you in Lens which you connect to b
 # Deployment
 
 
-Open a terminal by clicking the *+* in the bottom left and select *Terminal*
+Open a terminal by clicking the *+* in the bottom left and select *Terminal*:
 ![image](https://user-images.githubusercontent.com/42356848/147761789-75bca302-01ce-4cc3-b2d4-bb7e6a7a4b36.png)
 
 Simply clone this repository by using the ```git clone https://github.com/nickzas/do-kubernetes-challenge-2021.git``` command and run the ```quick-deploy.sh``` script:
+
 ![image](https://user-images.githubusercontent.com/42356848/147762296-57900aa1-ce1d-4626-acb0-698ab6783d35.png)
 
-Navigate to *Workloads* -> *Pods* and set it to view to *All Namespaces* so you can see your pods come up in real time:
+Navigate to *Workloads* -> *Pods* and set it to view to *All Namespaces* so you can see your pods come up:
 ![image](https://user-images.githubusercontent.com/42356848/147761360-d2d7d6cb-f7ea-4c8a-af6f-78a70f8bac0f.png)
 
-After a few minutes you should have a *MongoDB* and * MongoDB client* pod, a *Grafana* pod, a *Loki-stack* pod, and one *Loki-stack-Promtail* pod per node in your cluster. Promtail needs to be on each node in the cluster to gather all available logs, as a result Promtail is deployed as a DaemonSet which automatically deploys it on each node.
+After a few minutes you should have a *MongoDB* and *MongoDB client* pod, a *Grafana* pod, a *Loki-stack* pod, and one *Loki-stack-Promtail* pod per node in your cluster. Promtail needs to be on each node in the cluster to gather all available logs, as a result Promtail is deployed as a [DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) which automatically deploys it on each node:
 ![image](https://user-images.githubusercontent.com/42356848/147768836-8d58d93e-851c-436e-8647-f7a73c0a164a.png)
 
 # Testing
-To verify the logging system works, click the Grafana pod in Lens and click the *http:3000/TCP* hyperlink which will automatically portforward Grafana to a random port for you and open it in your default browser after a brief period:
+To verify the logging system works, click the Grafana pod in Lens and click the *http:3000/TCP* hyperlink which will automatically portforward port 3000 on Grafana to a random port for you and open it in your default browser after a brief period:
 ![image](https://user-images.githubusercontent.com/42356848/147769652-1348737a-2b49-4506-afed-d691b6d721ec.png)
 
 The default username is *admin* and the default password is *admin*, you will be prompted for a password change upon login:
@@ -57,7 +58,7 @@ Once logged into Grafana, navigate to the *Explore* section which is represented
 Enter ```{namespace="mongodb"}``` in the Loki query section and you'll see logs from all pods in the *mongodb* namespace:
 ![image](https://user-images.githubusercontent.com/42356848/147771085-663b0d72-bc1c-4d1a-b239-a585219ba53c.png)
 
-To generate some MongoDB logs, you can first open a shell on the *mongo-client* pod using kubectl exec:
+To generate some MongoDB logs, you can first open a shell on the *mongo-client* pod using kubectl exec in the Lens terminal:
 ```kubectl exec --namespace=mongodb deployment/mongo-client -it -- /bin/bash```
 
 Then log into the database:
@@ -67,7 +68,7 @@ Then log into the database:
 And finally add some data to the *blogs* database:
 ```db.blogs.insert({name: "example" })``` 
 
-Running these commands will generate some logs for you to see Grafana.
+Running these commands will generate some logs for you to see in Grafana.
 
 This log comes from login made to the database:
 ![image](https://user-images.githubusercontent.com/42356848/147778086-e8382da2-108a-4645-b1c2-82a95d9af63d.png)
