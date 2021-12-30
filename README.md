@@ -12,7 +12,7 @@ MongoDB Test Target - For this challenge I've decided to use MongoDB as a test t
 
 # Prerequisites
 - [kubectl](https://kubernetes.io/docs/tasks/tools/) - Used to deploy and manage almost everything Kubernetes
-- Kubernetes cluster(s) - You can either host your own cluster or [spin one up in Digital Ocean](https://www.digitalocean.com/products/kubernetes/)
+- Kubernetes cluster - You can either host your own cluster or [spin one up in Digital Ocean](https://www.digitalocean.com/products/kubernetes/)
 - [Lens](https://k8slens.dev/) - Lens is a way to easily view your cluster ina GUI, it's not technically required for this but I'd highly recommend it
 
 # Connecting to a Digital Ocean Kubernetes Cluster
