@@ -25,7 +25,7 @@ Open Lens and click *File* -> *Add Cluster*
 Paste in the contents of your cluster config file into Lens:
 ![image](https://user-images.githubusercontent.com/42356848/147761048-f251a67d-b85a-4da1-931b-c896c3ab71c7.png)
 
-This will create a new Kubernetes cluster for you in Lens which you connect to by clicking on it and then clicking the link symbol:
+This will display your Kubernetes cluster for you in Lens which you connect to by clicking on the cluster name and then clicking the link symbol:
 ![image](https://user-images.githubusercontent.com/42356848/147761137-a703d511-d7dc-4039-9c17-4ad4d164ed18.png)
 
 # Deployment
