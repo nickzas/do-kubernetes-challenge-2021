@@ -15,9 +15,29 @@ MongoDB Test Target - For this challenge I've decided to use MongoDB as a test t
 - Kubernetes cluster - You can either host your own cluster or [spin one up in Digital Ocean](https://www.digitalocean.com/products/kubernetes/)
 - [Lens](https://k8slens.dev/) - Lens is a way to easily view and interact with your cluster in a GUI, it's not technically required for this but I'd highly recommend it
 
+# Creating a Digital Ocean Kubernetes Cluster
+Creating a Kubernetes Cluster in Digital Ocean is quick and easy, simply open the project that you want to create your cluster in (by default DigitalOcean will make a project called *first-project*), click the *Create* drop down, and select *Kubernetes*:
+![image](https://user-images.githubusercontent.com/42356848/148644884-81f1ca7b-1b3f-43c8-82eb-fe7e30fb1538.png)
+
+The Kubernetes cluster creation page gives you the option to select your Kubernetes version, datacenter region, VPC network, cluster capacity, and (of course) the cluster's name and tags:
+![image](https://user-images.githubusercontent.com/42356848/148644978-9998dea9-cfed-45e5-9c7a-b2c79277d06a.png)
+
+For the purpose of this demonstration the default node plan works perfectly fine, however you can always bump up or bump down the cluster capacity based on your needs.
+![image](https://user-images.githubusercontent.com/42356848/148644999-17769976-6b36-494f-b0dd-21b40f5b2ebc.png)
+
+You can also add tags to make managing your cluster easier, tags will let you make rules based on a tag or to help find your cluster.
+![image](https://user-images.githubusercontent.com/42356848/148645241-a8c8ee0c-c083-4d22-8e8b-804dc25e719c.png)
+
+Upon creation you'll immediately be put into your cluster's dashboard where you can interact with your cluster once it's finished provisioning:
+![image](https://user-images.githubusercontent.com/42356848/148645594-db888eb4-9291-4f98-93e7-5125a6d4c0bd.png)
+
+You can also now find your cluster under the *Kubernetes* menu on the left:
+![image](https://user-images.githubusercontent.com/42356848/148645613-3f6b96f7-0d83-4e40-ab42-3c88445a899d.png)
+
+
 # Connecting to a Digital Ocean Kubernetes Cluster
 First, download your cluster config file:
-![image](https://user-images.githubusercontent.com/42356848/147760721-6f7b7ad7-2361-4490-865a-94395580c241.png)
+![image](https://user-images.githubusercontent.com/42356848/148645704-49300642-6605-4e9c-af13-d559c209c33a.png)
 
 Open Lens and click *File* -> *Add Cluster* 
 ![image](https://user-images.githubusercontent.com/42356848/147760984-974bc232-23e5-455e-8fdf-f5820d3ca898.png)
