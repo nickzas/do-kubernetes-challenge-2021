@@ -16,7 +16,7 @@ MongoDB Test Target - For this challenge I've decided to use MongoDB as a test t
 - [Lens](https://k8slens.dev/) - Lens is a way to easily view and interact with your cluster in a GUI, it's not technically required for this but I'd highly recommend it
 
 # Creating a Digital Ocean Kubernetes Cluster
-Creating a Kubernetes Cluster in Digital Ocean is quick and easy, simply open the project that you want to create your cluster in (by default DigitalOcean will make a project called *first-project*), click the *Create* drop down, and select *Kubernetes*:
+Creating a Kubernetes cluster in Digital Ocean is quick and easy, simply open the project that you want to create your cluster in (by default DigitalOcean will make a project called *first-project*), click the *Create* drop down, and select *Kubernetes*:
 ![image](https://user-images.githubusercontent.com/42356848/148644884-81f1ca7b-1b3f-43c8-82eb-fe7e30fb1538.png)
 
 The Kubernetes cluster creation page gives you the option to select your Kubernetes version, datacenter region, VPC network, cluster capacity, and (of course) the cluster's name and tags:
